@@ -31,10 +31,8 @@ export default function Home() {
 
   async function loadContracts() {
     // smart-contract addresses
-    console.log(network.name)
     const { solidity_storage, vyper_storage } = contracts[network.name];
-    console.log({ solidity_storage, vyper_storage })
-
+    
     // Vyper Storage smart-contract
     const vyperStorage = new ethers.Contract(
       vyper_storage,
@@ -71,9 +69,9 @@ export default function Home() {
 
     const tx = await solidityStorage.set(input);
     await tx.wait();
-    const solidityValue = await solidityStorage.get();
+    const solidityValue = await solidityStorage.get({gasLimit:100000});
 
-    setSolidity({ ...solidity, value: solidityValue.toString(), input: '' });
+    setSolidity({ ...solidity, value: solidityValue.toString(), input: ''});
   }
 
   async function changeVyper(e) {
@@ -84,9 +82,9 @@ export default function Home() {
 
     const tx = await vyperStorage.set(input);
     await tx.wait();
-    const vyperValue = await vyperStorage.get();
+    const vyperValue = await vyperStorage.get({gasLimit:100000});
 
-    setVyper({ ...vyper, value: vyperValue.toString(), input: '' });
+    setVyper({ ...vyper, value: vyperValue.toString(), input: ''});
   }
 
   return (

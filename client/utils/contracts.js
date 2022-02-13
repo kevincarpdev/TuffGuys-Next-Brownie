@@ -2,7 +2,6 @@
 Change the addreses as you deploy the smart-contracts
 */
 
-
 export default {
   kovan: {
     solidity_storage: '0x3ACf6173Fd4f2958d37A487A48B3349DcA51F6B3',
