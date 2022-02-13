@@ -11,7 +11,7 @@ import VyperStorage from '../artifacts/contracts/VyperStorage.json';
 import contracts from '../utils/contracts';
 
 export default function Home() {
-  const { signer } = useContext(Web3Context);
+  const { signer, network } = useContext(Web3Context);
   let [vyper, setVyper] = useState({
     contract: null,
     value: '',
@@ -31,7 +31,9 @@ export default function Home() {
 
   async function loadContracts() {
     // smart-contract addresses
-    const { solidity_storage, vyper_storage } = contracts['development'];
+    console.log(network.name)
+    const { solidity_storage, vyper_storage } = contracts[network.name];
+    console.log({ solidity_storage, vyper_storage })
 
     // Vyper Storage smart-contract
     const vyperStorage = new ethers.Contract(
@@ -39,7 +41,7 @@ export default function Home() {
       VyperStorage.abi,
       signer
     );
-    const vyperValue = await vyperStorage.get();
+    const vyperValue = await vyperStorage.get({gasLimit:100000});
 
     // Solidity Storage smart-contract
     const solidityStorage = new ethers.Contract(
@@ -47,7 +49,7 @@ export default function Home() {
       SolidityStorage.abi,
       signer
     );
-    const solidityValue = await solidityStorage.get();
+    const solidityValue = await solidityStorage.get({gasLimit:100000});
 
     setVyper({
       ...vyper,

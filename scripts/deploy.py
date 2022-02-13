@@ -1,4 +1,4 @@
-from brownie import SolidityStorage, VyperStorage, accounts, network
+from brownie import SolidityStorage, VyperStorage, config, accounts, network
 
 
 def main():
@@ -11,6 +11,6 @@ def main():
 
     elif network.show_active() == 'kovan':
         # add these accounts to metamask by importing private key
-        owner = accounts.load("main")
+        owner = accounts.add(config['wallets']['from_key'])
         SolidityStorage.deploy({'from':owner})
         VyperStorage.deploy({'from':owner})

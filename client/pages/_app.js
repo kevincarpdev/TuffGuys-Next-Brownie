@@ -9,6 +9,7 @@ function App({ Component, pageProps }) {
   let [balance, setBalance] = useState('0');
   let [address, setAddress] = useState('0x0');
   let [signer, setSigner] = useState(null);
+  let [network, setNetwork] = useState(null);
 
   useEffect(() => {
     loadWeb3Data();
@@ -20,9 +21,11 @@ function App({ Component, pageProps }) {
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
     const address = await signer.getAddress();
+    const network = await provider.getNetwork()
     const balance = await provider.getBalance(address);
-
+    console.log(network)
     setSigner(signer);
+    setNetwork(network)
     setAddress(address);
     setBalance(ethers.utils.formatEther(balance));
   }
@@ -31,7 +34,7 @@ function App({ Component, pageProps }) {
     await loadWeb3Data();
   }
 
-  if (!signer) {
+  if (!signer || !network) {
     return (
       <div>
         <p>Loading...</p>
@@ -48,7 +51,7 @@ function App({ Component, pageProps }) {
         refreshAddress={refreshAddress}
       />
 
-      <Web3Context.Provider value={{ signer }}>
+      <Web3Context.Provider value={{ signer, network }}>
         <main className="mt-16 p-10">
           <Component {...pageProps} />
         </main>
