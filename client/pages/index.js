@@ -2,8 +2,12 @@ import { useState, useEffect, useRef, useContext } from 'react';
 import { ethers } from 'ethers';
 import Head from 'next/head';
 import Web3Context from '../context/Web3Context';
+import Footer from "../components/common/Footer/Footer";
 import Hero from "../components/Hero/Hero";
 import Utility from "../components/Utility/Utility";
+import Rarity from "../components/Rarity/Rarity";
+import Team from "../components/Team/Team";
+import ExtraImagesMarquee from '../components/common/ExtraImagesMarquee/ExtraImagesMarquee';
 
 // Import the ABIs
 // import SolidityStorage from '../artifacts/contracts/SolidityStorage.json';
@@ -106,7 +110,9 @@ export default function Home() {
       <main>
         <Hero />
         <Utility />
-        <div>
+        <Rarity />
+        <Team />
+        {/* <div>
           <h2>Vyper Storage Contract</h2>
           <div>The stored value is: {vyper.value}</div>
           <br />
@@ -152,8 +158,12 @@ export default function Home() {
               </button>
             </div>
           </form>
-        </div>
+        </div> */}
       </main>
+      <footer>
+        <Footer />
+      </footer>
+      <ExtraImagesMarquee />
     </div>
   );
 

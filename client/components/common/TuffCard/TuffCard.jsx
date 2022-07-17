@@ -3,7 +3,6 @@ import s from "./TuffCard.module.css";
 import cn from "classnames";
 import Image from 'next/image'
 
-
 const TuffCard = ({ title, subtitle, text, image }) => {
 	return (
 		<>
@@ -13,14 +12,16 @@ const TuffCard = ({ title, subtitle, text, image }) => {
 					<h4>{subtitle}</h4>
 					<p>{text}</p>
 				</div>
+				<div className={s.cardImage}>
 				<Image
 					src={image}
 					alt={title}
-					className={s.cardImage}
+					
 					quality="85"
 					layout="intrinsic"
 					loading="lazy"
 				/>
+				</div>
 			</div>
 		</>
 	);

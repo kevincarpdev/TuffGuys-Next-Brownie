@@ -1,0 +1,14 @@
+.root {
+	position: relative;
+	padding: 0;
+}
+
+.marqueeImage {
+	max-width: 250px;
+}
+
+@media screen and (max-width: 768px) {
+	.marqueeImage {
+		max-width: 150px;
+	}
+}
