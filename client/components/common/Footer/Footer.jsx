@@ -27,6 +27,12 @@ export default function Footer() {
 					<div className={s.footerNavColumn}>
 						<h4>About</h4>
 						<ul>
+								<motion.li
+								>
+									<Link href="/fuse" scroll={true}>
+										Fuse
+									</Link>
+								</motion.li>
 							<li>
 								<motion.a
 									whileHover={{ scale: 1.2 }}

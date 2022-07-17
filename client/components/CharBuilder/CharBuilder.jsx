@@ -208,10 +208,9 @@ export default function CharBuilder() {
 									<h3>Choose Your Traits</h3>
 									<div className={s.traitSliders}>
 										{Object.keys(dressupState).map((item) => (
-											<div className={s.traitItem}>
+											<div className={s.traitItem} key={item}>
 												<h4>{item}</h4>
 												<div>
-
 														<div>
 															<h5>{item} #1</h5>
 														</div>
