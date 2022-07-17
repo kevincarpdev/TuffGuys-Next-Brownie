@@ -13,6 +13,7 @@
   justify-content: flex-start;
   gap: 10px 0;
   color: #fff;
+  max-width: 200px;
 }
 .footerLogoImage {
   position: relative;

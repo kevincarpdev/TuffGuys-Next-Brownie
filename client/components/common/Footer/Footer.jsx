@@ -16,7 +16,6 @@ export default function Footer() {
 						<Image
 							src={FooterLogo}
 							alt={"Tuff Guys"}
-							
 							quality="85"
 							layout="intrinsic"
 							loading="lazy"
