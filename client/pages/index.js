@@ -97,7 +97,6 @@ export default function Home() {
     <div>
       <Head>
         <title>Tuff Guys NFT</title>
-        
       </Head>
 
       <main>

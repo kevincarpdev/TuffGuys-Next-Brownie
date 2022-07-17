@@ -26,7 +26,6 @@ export default function Fuse() {
       <Head>
         <title>Tuff Guys | Fuse</title>
       </Head>
-
       <main>
         <CharBuilder />
       </main>
