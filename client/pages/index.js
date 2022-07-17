@@ -2,10 +2,12 @@ import { useState, useEffect, useRef, useContext } from 'react';
 import { ethers } from 'ethers';
 import Head from 'next/head';
 import Web3Context from '../context/Web3Context';
+import Hero from "../components/Hero/Hero";
+import Utility from "../components/Utility/Utility";
 
 // Import the ABIs
-import SolidityStorage from '../artifacts/contracts/SolidityStorage.json';
-import VyperStorage from '../artifacts/contracts/VyperStorage.json';
+// import SolidityStorage from '../artifacts/contracts/SolidityStorage.json';
+// import VyperStorage from '../artifacts/contracts/VyperStorage.json';
 
 // Import the deployed addresses
 import contracts from '../utils/contracts';
@@ -31,82 +33,79 @@ export default function Home() {
 
   async function loadContracts() {
     // smart-contract addresses
-    const { solidity_storage, vyper_storage } = contracts[network.name];
+    // const { solidity_storage, vyper_storage } = contracts[network.name];
     
-    // Vyper Storage smart-contract
-    const vyperStorage = new ethers.Contract(
-      vyper_storage,
-      VyperStorage.abi,
-      signer
-    );
-    const vyperValue = await vyperStorage.get({gasLimit:100000});
+    // // Vyper Storage smart-contract
+    // const vyperStorage = new ethers.Contract(
+    //   vyper_storage,
+    //   VyperStorage.abi,
+    //   signer
+    // );
+    // const vyperValue = await vyperStorage.get({gasLimit:100000});
 
-    // Solidity Storage smart-contract
-    const solidityStorage = new ethers.Contract(
-      solidity_storage,
-      SolidityStorage.abi,
-      signer
-    );
-    const solidityValue = await solidityStorage.get({gasLimit:100000});
+    // // Solidity Storage smart-contract
+    // const solidityStorage = new ethers.Contract(
+    //   solidity_storage,
+    //   SolidityStorage.abi,
+    //   signer
+    // );
+    // const solidityValue = await solidityStorage.get({gasLimit:100000});
 
-    setVyper({
-      ...vyper,
-      value: vyperValue.toString(),
-      contract: vyperStorage,
-    });
-    setSolidity({
-      ...solidity,
-      value: solidityValue.toString(),
-      contract: solidityStorage,
-    });
+    // setVyper({
+    //   ...vyper,
+    //   value: vyperValue.toString(),
+    //   contract: vyperStorage,
+    // });
+    // setSolidity({
+    //   ...solidity,
+    //   value: solidityValue.toString(),
+    //   contract: solidityStorage,
+    // });
   }
 
   async function changeSolidity(e) {
     e.preventDefault();
 
-    const input = Number(solidity.input);
-    const solidityStorage = solidity.contract;
+    // const input = Number(solidity.input);
+    // const solidityStorage = solidity.contract;
 
-    const tx = await solidityStorage.set(input);
-    await tx.wait();
-    const solidityValue = await solidityStorage.get({gasLimit:100000});
+    // const tx = await solidityStorage.set(input);
+    // await tx.wait();
+    // const solidityValue = await solidityStorage.get({gasLimit:100000});
 
-    setSolidity({ ...solidity, value: solidityValue.toString(), input: ''});
+    // setSolidity({ ...solidity, value: solidityValue.toString(), input: ''});
   }
 
   async function changeVyper(e) {
     e.preventDefault();
 
-    const input = Number(vyper.input);
-    const vyperStorage = vyper.contract;
+    // const input = Number(vyper.input);
+    // const vyperStorage = vyper.contract;
 
-    const tx = await vyperStorage.set(input);
-    await tx.wait();
-    const vyperValue = await vyperStorage.get({gasLimit:100000});
+    // const tx = await vyperStorage.set(input);
+    // await tx.wait();
+    // const vyperValue = await vyperStorage.get({gasLimit:100000});
 
-    setVyper({ ...vyper, value: vyperValue.toString(), input: ''});
+    // setVyper({ ...vyper, value: vyperValue.toString(), input: ''});
   }
 
   return (
     <div>
       <Head>
-        <title>Brownie Next Mix</title>
+        <title>Tuff Guys NFT</title>
         <meta
           name="description"
-          content="Everything you need to use NextJS with Brownie! "
+          content="Tuff Guys NFT"
         />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&family=Rammetto+One&display=swap" rel="stylesheet" />
       </Head>
 
       <main>
-        <div>
-          <h1>Your Brownie Mix is installed and ready.</h1>
-          <p>
-            If your contracts compiled and deployed successfully, you can see
-            the current storage values below.
-          </p>
-        </div>
-
+        <Hero />
+        <Utility />
         <div>
           <h2>Vyper Storage Contract</h2>
           <div>The stored value is: {vyper.value}</div>
