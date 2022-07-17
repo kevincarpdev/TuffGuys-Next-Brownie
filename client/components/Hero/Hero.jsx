@@ -28,55 +28,95 @@ export default function Hero() {
 						<div className={s.heroWrap}>
 							<div className={s.heroMobileMarquee}>
 								<Marquee pauseOnHover={true} speed={10} gradient={false}>
-									<img
+									<Image
 										src={MobileMarqueeImage1}
-										alt="Tuff Guys 1"
-										className={s.mobileMarqueeImage}
+										alt="Tuff Guys"
+										quality="85"
+										layout="intrinsic"
+										placeholder="blur"
+										className={s.mobileMarqueeImage} 
+										loading="lazy"
 									/>
-									<img
+									<Image
 										src={MobileMarqueeImage2}
-										alt="Tuff Guys 2"
-										className={s.mobileMarqueeImage}
+										alt="Tuff Guys"
+										quality="85"
+										layout="intrinsic"
+										placeholder="blur"
+										className={s.mobileMarqueeImage} 
+										loading="lazy"
 									/>
-									<img
+									<Image
 										src={MobileMarqueeImage3}
-										alt="Tuff Guys 3"
-										className={s.mobileMarqueeImage}
+										alt="Tuff Guys"
+										quality="85"
+										layout="intrinsic"
+										placeholder="blur"
+										className={s.mobileMarqueeImage} 
+										loading="lazy"
 									/>
-									<img
+									<Image
 										src={MobileMarqueeImage4}
-										alt="Tuff Guys 4"
-										className={s.mobileMarqueeImage}
+										alt="Tuff Guys"
+										quality="85"
+										layout="intrinsic"
+										placeholder="blur"
+										className={s.mobileMarqueeImage} 
+										loading="lazy"
 									/>
-									<img
+									<Image
 										src={MobileMarqueeImage5}
-										alt="Tuff Guys 5"
-										className={s.mobileMarqueeImage}
+										alt="Tuff Guys"
+										quality="85"
+										layout="intrinsic"
+										placeholder="blur"
+										className={s.mobileMarqueeImage} 
+										loading="lazy"
 									/>
-									<img
+									<Image
 										src={MobileMarqueeImage1}
-										alt="Tuff Guys 1"
-										className={s.mobileMarqueeImage}
+										alt="Tuff Guys"
+										quality="85"
+										layout="intrinsic"
+										placeholder="blur"
+										className={s.mobileMarqueeImage} 
+										loading="lazy"
 									/>
-									<img
+									<Image
 										src={MobileMarqueeImage2}
-										alt="Tuff Guys 2"
-										className={s.mobileMarqueeImage}
+										alt="Tuff Guys"
+										quality="85"
+										layout="intrinsic"
+										placeholder="blur"
+										className={s.mobileMarqueeImage} 
+										loading="lazy"
 									/>
-									<img
+									<Image
 										src={MobileMarqueeImage3}
-										alt="Tuff Guys 3"
-										className={s.mobileMarqueeImage}
+										alt="Tuff Guys"
+										quality="85"
+										layout="intrinsic"
+										placeholder="blur"
+										className={s.mobileMarqueeImage} 
+										loading="lazy"
 									/>
-									<img
+									<Image
 										src={MobileMarqueeImage4}
-										alt="Tuff Guys 4"
-										className={s.mobileMarqueeImage}
+										alt="Tuff Guys"
+										quality="85"
+										layout="intrinsic"
+										placeholder="blur"
+										className={s.mobileMarqueeImage} 
+										loading="lazy"
 									/>
-									<img
+									<Image
 										src={MobileMarqueeImage5}
-										alt="Tuff Guys 5"
-										className={s.mobileMarqueeImage}
+										alt="Tuff Guys"
+										quality="85"
+										layout="intrinsic"
+										placeholder="blur"
+										className={s.mobileMarqueeImage} 
+										loading="lazy"
 									/>
 								</Marquee>
 							</div>
