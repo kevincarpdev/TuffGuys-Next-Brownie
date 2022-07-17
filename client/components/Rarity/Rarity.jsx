@@ -44,15 +44,16 @@ export default function Rarity() {
 									</div>
 								</div>
 							</div>
-							<Image
-								src={RarityImage}
-								alt="Rarity"
-								quality="85"
-								layout="intrinsic"
-								placeholder="blur"
-								className={s.image} 
-								loading="lazy"
-							/>
+							<div className={s.image}>
+								<Image
+									src={RarityImage}
+									alt="Rarity"
+									quality="85"
+									layout="intrinsic"
+									placeholder="blur"
+									loading="lazy"
+								/>
+							</div>
 						</div>
 					</div>
 				</div>

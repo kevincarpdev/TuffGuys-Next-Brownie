@@ -12,7 +12,7 @@ export default function Footer() {
 		<>
 			<div className={cn(s.root, "container")}>
 				<div className={s.copyright}>
-					<Link className={s.footerLogoImage} href="/" scroll={false} passHref>
+					<Link className={s.footerLogoImage} href="/" scroll={true} passHref>
 						<Image
 							src={FooterLogo}
 							alt={"Tuff Guys"}

@@ -35,6 +35,7 @@ body {
   overscroll-behavior-x: none;
   font-family: var (--font-serif);
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 body {
