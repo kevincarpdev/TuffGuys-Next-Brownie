@@ -1,0 +1,101 @@
+.root {
+	position: relative;
+	padding: 4em 0;
+}
+.stepPanel {
+	position: relative;
+	border-radius: 40px;
+	padding: 0;
+	text-align: center;
+	width: 600px;
+	height: auto;
+	margin: 0 auto;
+}
+.frame {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+	margin: 5em;
+}
+.frame img {
+	position: absolute;
+	top: 0;
+	pointer-events: none;
+}
+.frame,
+.bgImage {
+	border-radius: 30px;
+}
+.bgImage {
+	position: absolute;
+	z-index: 2;
+}
+
+.fuseWindow {
+	background-color: #4b5563;
+	padding: 0;
+	border: 1px solid #374151;
+	border-radius: 30px 30px 0 0;
+}
+.controls {
+	z-index: 3;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 5px 0;
+	padding: 1em 0;
+	text-align: center;
+}
+.fuseRow {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 2em;
+	padding: 0;
+}
+.fuseStage {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.nftPanel {
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 2em 0;
+	border-radius: 30px 30px 0 0;
+}
+.nftRow {
+	padding: 3em 0;
+}
+.nftItem {
+	position: relative;
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	padding: 3em;
+	border-radius: 20px;
+	background-color: #ddd;
+}
+.nftItem:hover {
+	cursor: pointer;
+}
+.traitSliders {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	gap: 1em 0;
+}
+.traitItem {
+	margin: 5px 0 1em;
+	border-bottom: 1px solid #000;
+	padding-bottom: 1em;
+}
+.nftHeader {
+	user-select: none;
+}
