@@ -97,14 +97,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Tuff Guys NFT</title>
-        <meta
-          name="description"
-          content="Tuff Guys NFT"
-        />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&family=Rammetto+One&display=swap" rel="stylesheet" />
+        
       </Head>
 
       <main>

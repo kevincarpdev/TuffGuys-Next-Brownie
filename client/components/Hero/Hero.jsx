@@ -133,7 +133,7 @@ export default function Hero() {
 							</div>
 							<div className={s.heroText}>
 								<div className={s.badge}>Sold out!</div>
-									<Link className={s.heroBannerMain} href="/" scroll={false}>
+									<Link className={s.heroBannerMain} href="/" scroll={false} passHref>
 										<Image
 											src={HeroBanner}
 											alt="Hero"

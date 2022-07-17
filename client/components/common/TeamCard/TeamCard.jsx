@@ -26,14 +26,17 @@ const TeamCard = ({
 						whileTap={{ scale: 1.0 }}
 						className={s.nftItem}
 					>
-					<Image
-						src={Twitter}
-						alt={title + "s twitter"}
-						className={s.twitterImage}
-						quality="85"
-						layout="intrinsic"
-						loading="lazy"
-					/>
+						<div className={s.twitterImage}>
+							<Image
+								src={Twitter}
+								alt={title + "s twitter"}
+								
+								quality="85"
+								layout="intrinsic"
+								loading="lazy"
+							/>
+						</div>
+					
 					</motion.a>
 				</div>
 				<Image

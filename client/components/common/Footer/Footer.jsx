@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./Footer.module.css";
 import cn from "classnames";
+import Link from 'next/link'
 import FooterLogo from "../../../public/img/footer-logo.png";
 import { FaTwitter, FaDiscord } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -11,7 +12,7 @@ export default function Footer() {
 		<>
 			<div className={cn(s.root, "container")}>
 				<div className={s.copyright}>
-					<a href="/" className={s.footerLogoImage}>
+					<Link className={s.footerLogoImage} href="/" scroll={false} passHref>
 						<Image
 							src={FooterLogo}
 							alt={"Tuff Guys"}
@@ -20,7 +21,7 @@ export default function Footer() {
 							layout="intrinsic"
 							loading="lazy"
 						/>
-					</a>
+					</Link>
 					<p>Copyright © 2021 Tuff Guys</p>
 				</div>
 				<div className={s.footerLinks}>
